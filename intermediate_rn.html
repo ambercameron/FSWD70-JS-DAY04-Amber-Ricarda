@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intermediate Exercises RN</title>
+</head>
+<body>
+<p id="hotelinput">
+	<input type="text" name="nights" id="input">
+	<button type="button" onclick="button()">Check Availability</button>
+</p>
+<p id="hilton"></p>
+<p id="mariott"></p>
+<p id="bristol"></p>
+
+
+	<script>
+	function HotelConstructor(name, rooms, booked, features) {
+    this.name = name;
+    this.rooms = rooms;
+    this.booked = booked;
+    this.features = features;
+    this.checkAvailability = function() {
+      return this.rooms - this.booked;
+
+      }      
+}
+
+	function button (){
+		var a = document.getElementById("input").value
+		var hiltonHotel = new HotelConstructor('Hilton', Math.floor(Math.random()*11), Number(a));
+		var mariottHotel = new HotelConstructor('Mariott', Math.floor(Math.random()*11), Number(a));
+		var bristolHotel = new HotelConstructor('Bristol', Math.floor(Math.random()*11), Number(a));
+
+		console.log(hiltonHotel.rooms, mariottHotel.rooms, bristolHotel.rooms);
+
+		console.log(hiltonHotel.checkAvailability());
+		console.log(mariottHotel.checkAvailability());
+		console.log(bristolHotel.checkAvailability());
+
+			}
+
+		
+
+
+
+
+
+	</script>
+
+</body>
+</html>

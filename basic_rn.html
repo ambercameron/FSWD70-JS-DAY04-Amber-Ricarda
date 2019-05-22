@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<p id="text"></p>
+	<p id="info"> </p>
+	<p id="sentence1"></p>
+
+
+	<script>
+		//Basic Exercise 1 Age
+		// function age (){
+		// 	var birthyear = prompt("What is your birthyear?");
+		// 	var d = new Date().getFullYear();
+		// 	var age= d-birthyear;
+		// 	console.log(age);
+		// }
+
+		//Basic Exercise 2 Truncate
+		// function short(){
+		// 	var a = prompt("Write a sentence");
+		// 	var b = prompt("Write a number");
+		// 	var c = a+b;
+		// 	var d= c.substring(0, Number(b));
+		// 	console.log(a);
+		// 	console.log(b);
+		// 	console.log(c);
+		// 	console.log(d);
+		// 	document.getElementById("text").innerHTML= d;
+		// }
+
+		//Basic Exercise 3 Personal Information
+		var information ={
+			name:"John",
+			surname: "Doe",
+			age: "25",
+			description: "I am a future developer",
+			sentence: function (){
+				return ("Hi I am " + this.name + " "+ this.surname + " "+ this.age + " years old and "+ this.description);
+			}
+
+		}
+	    var info_name = document.getElementById("info")
+	    info_name.textContent=information.name;
+	    var sentence = document.getElementById("sentence1");
+	    sentence.textContent=information.sentence();
+
+
+		
+	// age();
+	// short();
+	</script>
+
+
+</body>
+</html>
