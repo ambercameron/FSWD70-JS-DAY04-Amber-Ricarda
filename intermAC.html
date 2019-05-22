@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		#hiddenhil, #hiddenmar, #hiddenhol{
+			display: none;
+		}
+		body{
+			background-color: #003580;
+			color:  #FFFFFF;
+		}
+		button, input{
+			background-color: #E9F0FA;
+		}
+
+	</style>
+</head>
+<h1>Javascript Day 04 - Intermediate</h1>
+
+<h4>Intermediate 01 Hotels</h4>
+<p>Hilton Hotel</p>
+<input type= text id="hiltonnights">
+<button type="button" onclick="hiltonavail()">Check Availability</button>
+<p id = "hiltonresult"></p>
+<button id="hiddenhil" type="button" onclick="errmess()">I'll Proceed</button>
+
+<br><p>Marriott Hotel</p>
+<input type= text id="marriottnights">
+<button type="button" onclick="marriottavail()">Check Availability</button>
+<p id = "marriottresult"></p>
+<button id="hiddenmar" type="button" onclick="errmess()">I'll Proceed</button>
+
+<br><p>Holiday Inn</p>
+<input type= text id="holidaynights">
+<button type="button" onclick="holidayavail()">Check Availability</button>
+<p id = "holidayresult"></p>
+<button id="hiddenhol" type="button" onclick="errmess()">I'll Proceed</button>
+
+<body>
+	<script src="interscriptAC.js"></script>	
+</body>
+</html>
