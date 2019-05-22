@@ -2,16 +2,21 @@
 <html>
 <head>
 	<title>Intermediate Exercises RN</title>
+	<style type="text/css" media="screen">
+		 body {
+		 	background-color: #003580; 
+		 	color: #FFFFFF;
+		 	}
+		 button{
+		 	background-color: #E9F0FA ;
+		 }
+	</style>
 </head>
 <body>
 <p id="hotelinput">
 	<input type="text" name="nights" id="input">
 	<button type="button" onclick="button()">Check Availability</button>
 </p>
-<p id="hilton"></p>
-<p id="mariott"></p>
-<p id="bristol"></p>
-
 
 	<script>
 	function HotelConstructor(name, rooms, booked, features) {
@@ -21,8 +26,8 @@
     this.features = features;
     this.checkAvailability = function() {
       return this.rooms - this.booked;
+      };
 
-      }      
 }
 
 	function button (){
@@ -36,12 +41,29 @@
 		console.log(hiltonHotel.checkAvailability());
 		console.log(mariottHotel.checkAvailability());
 		console.log(bristolHotel.checkAvailability());
-
+		var hotels = [hiltonHotel,mariottHotel,bristolHotel];
+		for (i = 0 ; i< hotels.length;i++){
+			if (hotels[i].checkAvailability()>0){
+				document.write("<br>The "+hotels[i].name+ " Hotel has " + hotels[i].checkAvailability() + " rooms available.");
+				document.createElement("Button");
+		// 1. Create the button
+				var button = document.createElement("button");
+				button.innerHTML = "I'll reserve";
+		// 2. Append somewhere
+				var body = document.getElementsByTagName("body")[0];
+				body.appendChild(button);
+		// 3. Add event handler
+				button.addEventListener ("click", function() {
+				  alert("Page under construction.");
+				});
+			} else {
+				document.write("<br>Sorry, no free room for "+ hotels[i].booked + " night(s).");
 			}
+		}
+		
+	}
 
 		
-
-
 
 
 
